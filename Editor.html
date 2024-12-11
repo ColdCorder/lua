@@ -449,7 +449,7 @@
 			    return String(editor.getValue());
 			}
 
-			function SetText(newText) {
+			SetText = function (newText) {
 			    const editor = monaco.editor.getModels()[0];
 			    editor.setValue(newText);
 			}
