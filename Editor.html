@@ -441,8 +441,13 @@
 			    editor.setValue('');
 			}
 
-			SetText = function () {
-			    editor.SetValue("hi ya");
+			AppendText = function (text) {
+			    let currentValue = editor.getValue();
+			    if (currentValue === '') {
+			        editor.setValue(text);
+			    } else {
+			        editor.setValue(currentValue + '\n' + text);
+			    }
 			}
 			
 
