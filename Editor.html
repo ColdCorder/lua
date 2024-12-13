@@ -6,7 +6,7 @@
 	<style type="text/css">
 		:root {
 			/* replace 'img_url' with your animated image or regular image link */
-			--url: url("");
+			--url: url("https://nuke.bytex.vip/icon.png");
 		}
 
 		html,
@@ -292,18 +292,6 @@
 				document.execCommand('selectAll');
 			}
 
-			GetText = function () {
-				return String(editor.getValue());
-			}
-
-			SetText = function (x) {
-				try {
-					editor.setValue(JSON.parse(`${String(x)}`));
-				} catch (e) {
-					editor.setValue(String(x))
-				}
-			}
-
 			GetProposals = function () {
 				return Proposals;
 			}
@@ -449,10 +437,18 @@
 			    return String(editor.getValue());
 			}
 
-			SetText = function (code) {
-			    editor.setValue(code);
+			ClearText = function () {
+			    editor.setValue('');
 			}
-
+			
+			AppendText = function (text) {
+			    let currentValue = editor.getValue();
+			    if (currentValue === '') {
+			        editor.setValue(text);
+			    } else {
+			        editor.setValue(currentValue + '\n' + text);
+			    }
+			}
 		});
 	</script>
 </body>
