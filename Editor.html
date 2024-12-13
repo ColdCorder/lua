@@ -440,15 +440,17 @@
 			ClearText = function () {
 			    editor.setValue('');
 			}
-			
-			AppendText = function (text) {
-			    let currentValue = editor.getValue();
-			    if (currentValue === '') {
-			        editor.setValue(text);
-			    } else {
-			        editor.setValue(currentValue + '\n' + text);
-			    }
+
+			SetText = function () {
+				editor.SetValue(
+					'
+					Hello
+					World
+					'
+				);
 			}
+			
+
 		});
 	</script>
 </body>
